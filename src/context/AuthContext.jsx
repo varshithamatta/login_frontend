@@ -10,7 +10,7 @@ export const AuthProvider = ({ children }) => {
 
   const login = async (username, password) => {
     try {
-      const response = await axios.post(`${process.env.REACT_APP_API_URL}/api/auth/login`, { username, password });
+      const response = await axios.post('https://login-backend-j7vt.onrender.com/api/auth/login', { username, password });
       setToken(response.data.token);
       localStorage.setItem('token', response.data.token);
       navigate('/home');
@@ -21,7 +21,7 @@ export const AuthProvider = ({ children }) => {
 
   const signup = async (username, password) => {
     try {
-      await axios.post(`${process.env.REACT_APP_API_URL}/api/auth/signup`, { username, password });
+      await axios.post('https://login-backend-j7vt.onrender.com/api/auth/signup', { username, password });
       alert('Signup successful! Please login.');
       navigate('/');
     } catch (error) {
