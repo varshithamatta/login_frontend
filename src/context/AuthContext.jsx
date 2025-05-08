@@ -32,7 +32,7 @@ export const AuthProvider = ({ children }) => {
   const logout = () => {
     setToken(null);
     localStorage.removeItem('token');
-    navigate('/login');
+    navigate('/');
   };
 
   return (
